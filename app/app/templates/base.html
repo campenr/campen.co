@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>Richard Campen</title>
+        <title>Richard Campen {% block title_suffix %}{% endblock %}</title>
 
         <meta name="description" content="Full stack web dev. DevOps / infrastructure. Automation. Ex microbiologist / bioinformatician."/>
 
@@ -16,10 +16,11 @@
         <meta property="og:description" content="Full stack web dev. DevOps / infrastructure. Automation. Ex microbiologist / bioinformatician.">
         <meta property="og:site_name" content="richardcampen.com">
         <meta property="og:type" content="website">
+        <meta property="og:image" content="https://richardcampen.com{{ url_for('static', filename='img/headshot_300px.png') }}">
 
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="https://richardcampen.com" />
-        <meta name="twitter:description" content="Full stack web dev. DevOps / infrastructure. Automation. Ex microbiologist / bioinformatician." />
+        <meta name="twitter:site" content="https://richardcampen.com">
+        <meta name="twitter:description" content="Full stack web dev. DevOps / infrastructure. Automation. Ex microbiologist / bioinformatician.">
+        <meta name="twitter:image" content="https://richardcampen.com{{ url_for('static', filename='img/headshot_300px.png') }}">
 
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
         <link rel="stylesheet" href="{{ static_chunk('main.css') }}" />

@@ -13,5 +13,9 @@ module.exports = {
         xs: '480px',
       }
     }
-  }
+  },
+  purge: {
+    enabled: true,
+    content: ['./app/app/**/*.html'],
+  },
 }

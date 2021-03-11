@@ -1,12 +1,10 @@
 'use strict';
 
 const path = require('path');
-const glob = require('glob');
 
 const ManifestPlugin = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const PurgecssPlugin = require('purgecss-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 const ENVIRONMENT = process.env.ENVIRONMENT;
@@ -19,7 +17,6 @@ const staticNameFormat = ENVIRONMENT === 'development' ? '[name]' : '[name].[con
 module.exports = {
   mode: 'production',
   entry: [
-    './frontend/js/main.js',
     './frontend/scss/main.scss',
   ],
   output: {
@@ -81,9 +78,6 @@ module.exports = {
           },
         ]
       }),
-//      new PurgecssPlugin({
-//        paths: glob.sync(`${path.join(__dirname, 'app')}/**/*`,  { nodir: true }),
-//      }),
       new LiveReloadPlugin({
         // because we're not using hashed file names when running webpack watch we need to check hashes here.
         useSourceHash: true,
