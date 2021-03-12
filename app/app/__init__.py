@@ -1,8 +1,10 @@
 from flask import Flask
+
 from flask_sitemap import Sitemap
 
 
 flask_app = Flask(__name__)
+flask_app.config.from_object('config')
 
 # enable werkzeug debug traceback when running behind uWSGI
 if flask_app.config.get('DEBUG') is True:

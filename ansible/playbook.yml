@@ -5,6 +5,7 @@
   roles:
     - ubuntu
     - python
+    - flask
     - uwsgi
     - nginx
 

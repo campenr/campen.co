@@ -29,10 +29,6 @@ flask_apps:
     config:
       - key: DEBUG
         value: True
-      - key: SECRET_KEY
-        value: "'thisisasupersecretkey'"
-      - key: SQLALCHEMY_DATABASE_URI
-        value: "'postgresql://{{ app_user_name }}:password@localhost:5432/{{ app_name }}'"
 
 uwsgi_emperor_mode: False
 uwsgi_apps:
